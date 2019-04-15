@@ -8,7 +8,7 @@ import com.sf.helloworld.bean.Department;
  * @author SF
  * @create 2019-03-18 15:17
  */
-@Mapper
+//@Mapper
 public interface DepartmentMapper {
  
     @Select("select * from department where id=#{id}")

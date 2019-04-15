@@ -32,6 +32,7 @@ public class DeptService {
 	
 	public int insertDept(Department department) {
 		return departmentMapper.insertDept(department);
+		
 	}
 	
 	

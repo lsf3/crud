@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sf.helloworld.mapper.EmployeeMapper">
+<!--  tip : 配完这个记得去yml里面告诉spring.............. -->
+  <select id="getEmpById" resultType="com.sf.helloworld.bean.Employee">
+    select * from employee where id = #{id}
+  </select>
+  <update id="updateEmpById" >
+  	update employee set lastName =#{lastName},email=#{email},gender=#{gender},d_id=#{dId} where id=#{id}
+  </update>
+  <insert id="insertEmp" useGeneratedKeys="true" keyProperty="id">
+  	insert into employee (lastName,email,gender,d_id) values (#{lastName},#{email},#{gender},#{dId})
+  </insert>
+  <delete id="deleteEmp">
+  	delete from employee where id=#{id}
+  </delete>
+  
+  
+</mapper>
