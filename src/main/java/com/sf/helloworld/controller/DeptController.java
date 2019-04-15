@@ -26,6 +26,8 @@ public class DeptController {
 		return DeptService.deleteDeptById(id);
 		
 	}
+	
+	/*
 //  http://localhost:8080/insertDept/xxx部/1
 	@RequestMapping(value="/insertDept/{departmentName}/{dId}")
 	public int insertDepartment(@PathVariable("departmentName") String departmentName,
@@ -35,6 +37,18 @@ public class DeptController {
 		return DeptService.insertDept(departmentName, dId);
 		
 	}
+	*/
+	
+//  http://localhost:8080/insertDept?departmentName=admin&dId=3
+	@RequestMapping(value="/insertDept")
+	public int insertDepartment(Department department) 
+	{
+		
+		return DeptService.insertDept(department);
+		
+	}
+	
+	/*
 //  http://localhost:8080/updatDept/1/xxx部/1		
 	@RequestMapping(value="/updatDept/{id}/{departmentName}/{dId}")
 	public int updateDepartment(@PathVariable("id") Integer id,
@@ -43,6 +57,16 @@ public class DeptController {
 	{
 		
 		return DeptService.updateDept(id, departmentName, dId);
+		
+	}
+	*/
+	
+//  http://localhost:8080/updatDept?id=1&departmentName=admin&dId=3		
+	@RequestMapping(value="/updatDept")
+	public int updateDepartment(Department department) 
+	{
+		
+		return DeptService.updateDept(department);
 		
 	}
 	

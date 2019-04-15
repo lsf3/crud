@@ -18,7 +18,7 @@ public class EmpService {
 	public Employee selectEmpById( Integer id) {
 		return employeeMapper.getEmpById(id);
 	}
-	
+	/*
 	public int updateEmpById( Integer id,String lastName,Integer gender,
 			                 String email, Integer dId) {
 		Employee employee = new Employee();
@@ -30,7 +30,18 @@ public class EmpService {
 		
 		return employeeMapper.updateEmpById(employee);
 	}
+	*/
 	
+	public int updateEmpById(Employee employee) {
+		return employeeMapper.updateEmpById(employee);
+	}
+	
+	
+	
+	
+	
+	
+	/*
 	public int insertEmp(String lastName,Integer gender,
 			                 String email, Integer dId) {
 		Employee employee = new Employee();
@@ -42,6 +53,18 @@ public class EmpService {
 		return employeeMapper.insertEmp(employee);
 		
 	}
+	*/
+	
+	public int insertEmp(Employee employee) {
+		return employeeMapper.insertEmp(employee);
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	public int deleteEmpById(Integer id) {
 		return  employeeMapper.deleteEmp(id);

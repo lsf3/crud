@@ -21,18 +21,32 @@ public class DeptService {
 		return departmentMapper.deleteDeptById(id);
 		
 	}
-	
-	public int insertDept(String departmentName,Integer dId) {
+	/*
+	public int insertDept(String departmentName,Integer dId ) {
 		Department department = new Department();
 		department.setDepartmentName(departmentName);
 		department.setdId(dId);
 		return departmentMapper.insertDept(department);
 	}
+	*/
+	
+	public int insertDept(Department department) {
+		return departmentMapper.insertDept(department);
+	}
+	
+	
+	
+	/*
 	public int updateDept(Integer id,String departmentName,Integer dId) {
 		Department department = new Department();
 		department.setId(dId);
 		department.setDepartmentName(departmentName);
 		department.setdId(dId);
+		return departmentMapper.updateDept(department);
+	}
+	*/
+	public int updateDept(Department department) {
+		
 		return departmentMapper.updateDept(department);
 	}
 	
