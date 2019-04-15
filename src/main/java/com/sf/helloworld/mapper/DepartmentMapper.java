@@ -18,10 +18,10 @@ public interface DepartmentMapper {
     public int deleteDeptById(Integer id);
 
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    @Insert("insert into department(departmentName,dId) values(#{departmentName},#{dId})")
+    @Insert("insert into department(department_name,d_id) values(#{departmentName},#{dId})")
     public int insertDept(Department department);
 
-    @Update("update department set departmentName=#{departmentName},dId=#{dId} where id=#{id}")
+    @Update("update department set department_name=#{departmentName},d_id=#{dId} where id=#{id}")
     public  int updateDept(Department department);
 
 

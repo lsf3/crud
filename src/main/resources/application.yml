@@ -31,6 +31,15 @@ spring:
     schema:
       - classpath:sql/mybatis.sql
       
+      
+  jpa:
+    hibernate: 
+      ddl-auto: update  #更新或者创建表结构
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true   #  显示sql语句
+    database: MYSQL
+      
 mybatis:
   config-location: classpath:mabatis/mybatis-config.xml
   mapper-locations: 

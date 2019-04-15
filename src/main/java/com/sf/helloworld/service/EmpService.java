@@ -63,9 +63,6 @@ public class EmpService {
 	
 	
 	
-	
-	
-	
 	public int deleteEmpById(Integer id) {
 		return  employeeMapper.deleteEmp(id);
 	}
