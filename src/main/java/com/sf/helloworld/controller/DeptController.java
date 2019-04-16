@@ -15,13 +15,13 @@ public class DeptController {
 	DeptService DeptService;
 	
 //  http://localhost:8080/dept/1	
-	@RequestMapping(value="/dept/{id}")
+	@GetMapping(value="/dept/{id}")
 	public Department selectDeptById(@PathVariable Integer id) {
 		return DeptService.selectDeptById(id);
 		
 	}
 //  http://localhost:8080/deleteDept/1
-	@RequestMapping(value="/deleteDept/{id}")
+	@GetMapping(value="/deleteDept/{id}")
 	public int deletetDeptById(@PathVariable Integer id) {
 		return DeptService.deleteDeptById(id);
 		
@@ -29,7 +29,7 @@ public class DeptController {
 	
 	/*
 //  http://localhost:8080/insertDept/xxx部/1
-	@RequestMapping(value="/insertDept/{departmentName}/{dId}")
+	@GetMapping(value="/insertDept/{departmentName}/{dId}")
 	public int insertDepartment(@PathVariable("departmentName") String departmentName,
 			                           @PathVariable("dId") Integer dId) 
 	{
@@ -40,7 +40,7 @@ public class DeptController {
 	*/
 	
 //  http://localhost:8080/insertDept?departmentName=admin&dId=3
-	@RequestMapping(value="/insertDept")
+	@GetMapping(value="/insertDept")
 	public int insertDepartment(Department department) 
 	{
 		
@@ -50,7 +50,7 @@ public class DeptController {
 	
 	/*
 //  http://localhost:8080/updatDept/1/xxx部/1		
-	@RequestMapping(value="/updatDept/{id}/{departmentName}/{dId}")
+	@GetMapping(value="/updatDept/{id}/{departmentName}/{dId}")
 	public int updateDepartment(@PathVariable("id") Integer id,
 								@PathVariable("departmentName") String departmentName,
 								@PathVariable("dId") Integer dId) 
@@ -62,8 +62,8 @@ public class DeptController {
 	*/
 	
 //  http://localhost:8080/updatDept?id=1&departmentName=admin&dId=3		
-	@RequestMapping(value="/updatDept")
-	public int updateDepartment(Department department) 
+	@GetMapping(value="/updatDept")
+	public int updateDepartment1(Department department) 
 	{
 		
 		return DeptService.updateDept(department);

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -34,13 +35,34 @@ public class DeptServiceJpa {
 		 return department;
 	}
 	
-	/*
-	public Boolean updateDeptJpa(Department department) {
+	
+	
+	@Transactional
+	public boolean updateDeptJpa(Integer id,String departmentName,Integer dId) {
+		Department byId = deptRepository.getById(id);
+		byId.setDepartmentName(departmentName);
+		byId.setdId(dId);
 		
-		 myRepository.(department);
+		 
 		 return true;
 	}
-	*/
+	
+	@Transactional
+	public Integer updateDeptJpa222(Integer id,String departmentName,Integer dId) {
+		 Integer updateDeptUseJpql = deptRepository.updateDeptUseJpql(id, departmentName, dId);
+		
+		
+		
+		return updateDeptUseJpql;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public List<Department> selectDept(String departmentName,Integer dId) {
 		List<Department> deptList = deptRepository.getByDepartmentNameStartingWithAndDIdGreaterThan(departmentName, dId);

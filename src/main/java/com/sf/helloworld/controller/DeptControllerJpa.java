@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sf.helloworld.bean.Department;
-import com.sf.helloworld.service.DeptService;
 import com.sf.helloworld.service.DeptServiceJpa;
 
 @RestController
@@ -33,6 +32,7 @@ public class DeptControllerJpa {
 	
 	
 //  http://localhost:8080/insertDeptJpa?departmentName=admin&dId=3
+//  不加id或者加新的id就是增,加已有的id就是修改整条语句,想修改一部分属性就先查询在调对象的set方法
 	@RequestMapping(value="/insertDeptJpa")
 	public Department insertDepartment(Department department) 
 	{
@@ -42,16 +42,29 @@ public class DeptControllerJpa {
 	}
 	
 	
-	/*
-//  http://localhost:8080/updatDept?id=1&departmentName=admin&dId=3		
-	@RequestMapping(value="/updatDept")
-	public int updateDepartment(Department department) 
+	
+//  http://localhost:8080/updatDeptJ?id=1&departmentName=admin&dId=3		
+	@GetMapping(value="/updatDeptJ")
+	public Boolean updateDepartment1(Department department) 
 	{
 		
-		return DeptService.updateDept(department);
+		 Boolean boolean1 = jpaDeptService.updateDeptJpa(department.getId(),department.getDepartmentName(),department.getdId());
+		 
+		return boolean1;
 		
 	}
-	*/
+	
+//  http://localhost:8080/updatDeptJ222?id=1&departmentName=admin&dId=3		
+	@GetMapping(value="/updatDeptJ222")
+	public Integer updateDepartment222(Department department) 
+	{
+		
+		Integer updateDeptJpa222 = jpaDeptService.updateDeptJpa222(department.getId(),department.getDepartmentName(),department.getdId());
+		
+		return updateDeptJpa222;
+		
+	}
+	
 
 	
 	
