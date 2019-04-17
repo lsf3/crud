@@ -26,9 +26,7 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     
   #关闭thymeleaf缓存
-  thymeleaf:
-    cache: false
-    enabled: false   
+ 
     
     #自动去检查需不需要创建数据库并重新建表插入数据
     schema:
@@ -42,6 +40,11 @@ spring:
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
     show-sql: true   #  显示sql语句
     database: MYSQL
+    
+  http:
+    multipart:
+      max-file-size: 30000MB
+      max-request-size: 3000MB
       
 mybatis:
   config-location: classpath:mabatis/mybatis-config.xml
